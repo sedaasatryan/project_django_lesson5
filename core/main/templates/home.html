@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <div>
+        {% for i in notebook_list %}
+            <h4>{{ i.name }}</h4>
+            <a href="{% url 'home_detail' i.id %}"><img src="{{ i.img.url }}" width='200px' alt=""></a>
+            <p>{{ i.price }}</p>
+        {% endfor %}
+    </div>
+
+{% endblock %}
